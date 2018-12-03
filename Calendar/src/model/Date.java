@@ -1,5 +1,7 @@
 package model;
 
+import static java.lang.String.format;
+
 public class Date {
     private int month;
     private int day;
@@ -11,12 +13,13 @@ public class Date {
         this.year = year;
     }
 
-    public void getDateShort() {
-        String result = String.format("{0}/{1}/{2}", month, day, year);
+    public String getDateShort() {
+        String result = format("%s/%s/%s", month, day, year);
         System.out.println(result);
-    }
+        return result;
+        }
 
-    public void getDateLong() {
+    public String getDateLong() {
         String monthString;
         switch (month) {
             case 1: monthString = "January";
@@ -47,7 +50,8 @@ public class Date {
                 break;
         }
 
-        String result = String.format("{0} {1}, {2}", monthString, day, year);
+        String result = format("%s %s, %s", monthString, day, year);
         System.out.println(result);
+        return result;
     }
 }
