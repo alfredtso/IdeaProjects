@@ -4,10 +4,10 @@ import java.awt.*;
 
 public abstract class Entry {
 
-    Date date;
-    Time time;
-    Label label;
-    int repeatday = 0;
+    private Date date;
+    private Time time;
+    private Label label;
+    private int repeatday = 0;
 
     public Entry(Date date, Time time, Label label) {
         this.date = date;
