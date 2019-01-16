@@ -18,7 +18,7 @@ public class Graph {
         }
     }
 
-    public Graph(In in) {
+/*    public Graph(In in) {
         try{
             this.V = in.readInt();
             if (V < 0) throw new IllegalArgumentException("V must be non-neg");
@@ -69,8 +69,8 @@ public class Graph {
 
     public int degree(int v) {
         validateVertex(v);
-        return adj[v].size
-    }
+        return adj[v].size;
+    }*/
 
 //    public static void main(String[] args) {
 //

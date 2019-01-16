@@ -80,7 +80,7 @@ public class StdRandom {
         return mu + sigma * gaussian();
     }
 
-    public static void shuffle(Object[] a) {
+    /*public static void shuffle(Object[] a) {
         validateNotNull(a);
         int n = a.length;
         for (int i = 0; i < n; i++) {
@@ -158,9 +158,9 @@ public class StdRandom {
             a[i] = a[r];
             a[r] = temp;
         }
-    }
+    }*/
 
-    public static int[] permutation(int n){
+ /*   public static int[] permutation(int n){
         if (n < 0) {
             throw new IllegalArgumentException("invalid n");
         }
@@ -168,7 +168,7 @@ public class StdRandom {
         for (int i = 0; i < n; i++){ perm[i] = i; }
         shuffle(perm);
         return perm;
-    }
+    }*/
 
     private static void validateSubarrayIndices(int lo, int hi, int length) {
     }

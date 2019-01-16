@@ -235,7 +235,5 @@ public final class In {
         return vals;
     }
 
-    }
-
 }
 

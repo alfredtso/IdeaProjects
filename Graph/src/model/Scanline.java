@@ -8,6 +8,4 @@ public class Scanline {
     Scanner s = null;
     Reader r = null;
 
-    public
-
 }

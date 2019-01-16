@@ -7,10 +7,6 @@ public class Flips {
         int n = Integer.parseInt(args[0]);
         Counter heads = new Counter("heads");
         Counter tails = new Counter("tails");
-        for (int i = 0; i < n; i++) {
-            if ()
-        }
-
 
     }
 }
