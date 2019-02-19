@@ -1,4 +1,6 @@
-package model;
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
@@ -108,7 +110,7 @@ public class Percolation {
 
     public boolean isFull(int row, int col) {
         legalArgs(row, col);
-        return false;
+        return !grid[getIndex(row,col)];
     }
 
     public int numberOfOpenSites() {
@@ -116,7 +118,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return path.connect(0, side * side + 1);
+        return path.connected(0, side * side + 1);
     }
 
     public static void main(String[] args) {
@@ -128,6 +130,15 @@ public class Percolation {
         testing.open(2, 2);
         testing.open(3, 2);
         System.out.println(testing.percolates());
+        System.out.println(testing.isOpen(1,1));
+        System.out.println(testing.isOpen(2,1));
+        System.out.println(testing.isOpen(1,2));
+        System.out.println(testing.isFull(2,1));
+        System.out.println(testing.isFull(1,2));
+        System.out.println(testing.numberOfOpenSites());
+        //testing.open(4, 4);
+
     }
 
 }
+
