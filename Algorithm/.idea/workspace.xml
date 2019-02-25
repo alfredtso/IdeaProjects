@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a4a3bbe-b721-49a7-b0e3-34aa26d2a978" name="Default Changelist" comment="" />
+    <list default="true" id="0a4a3bbe-b721-49a7-b0e3-34aa26d2a978" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$ListIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$ListIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/DequeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/DequeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/DequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/RandomizedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/RandomizedQueue.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,15 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Percolation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/LinkedStackOfString.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,11 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/ResizingArrayStackOfStrings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="600">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/production/Algorithm/model/Queue.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1214">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
             </state>
           </provider>
         </entry>
@@ -86,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="95">
               <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,6 +129,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -146,9 +159,13 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="1715" />
+    <option name="y" value="549" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -156,6 +173,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,7 +226,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,7 +321,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1057" extended-state="0" />
+    <frame x="1715" y="549" width="1920" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
@@ -313,7 +330,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.5019268" side_tool="true" visible="true" weight="0.118743345" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.5019268" side_tool="true" visible="true" weight="0.11980831" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.5677083" />
@@ -322,7 +339,7 @@
       <window_info anchor="bottom" id="TODO" order="5" weight="0.14012739" />
       <window_info anchor="bottom" id="Messages" order="6" weight="0.32908705" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32908705" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Problems" order="9" weight="0.21354167" />
       <window_info active="true" anchor="bottom" id="Run" order="10" sideWeight="0.49807322" visible="true" weight="0.18471338" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="11" />
@@ -473,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ResizingArrayStackOfStrings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Bag.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -490,10 +500,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Selection.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Shell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="360">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -507,6 +517,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Algorithm/model/Queue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1214">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Insertion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -514,20 +541,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Shell.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Selection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
+    <entry file="file://$PROJECT_DIR$/src/model/ResizingArrayStackOfStrings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>

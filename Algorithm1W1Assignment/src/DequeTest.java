@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Iterator;
+
 import static org.junit.Assert.*;
 
 
@@ -101,15 +103,15 @@ public class DequeTest {
         t.addFirst("1");
         t.addFirst("2");
         t.addFirst("3");
-        Deque<String> s = new Deque<>();
-        s.addFirst("1");
-        s.addFirst("2");
-        s.addFirst("3");
-        for (String item : t) {
-            System.out.println(item);
-            for (String nitem: t) {
-                System.out.println(nitem);
+        Iterator iterator = t.iterator();
+        while (iterator.hasNext()) {
+            Iterator innerIt = t.iterator();
+            while (innerIt.hasNext()) {
+                System.out.println("Inner loop: ");
+                System.out.println(innerIt.next());
             }
+            System.out.println();
+            System.out.println(iterator.next());
         }
     }
 

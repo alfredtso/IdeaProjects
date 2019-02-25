@@ -12,16 +12,16 @@ public class Deque<Item> implements Iterable<Item> {
     *to current items and max 48n + 192 bytes,
     *iterator implementation must support each ops in constant worst-case time*/
     private int size;
-    private Node<Item> sentinel;
+    private Node sentinel;
 
-    private static class Node<Item> {
+    private class Node {
         Item item;
-        Node<Item> next;
-        Node<Item> previous;
+        Node next;
+        Node previous;
     }
 
     public Deque() {
-        sentinel = new Node<>();
+        sentinel = new Node();
         sentinel.next = null;
         sentinel.previous = null;
         size = 0;
@@ -39,7 +39,7 @@ public class Deque<Item> implements Iterable<Item> {
     public void addFirst(Item item) {
         if (item == null) throw new IllegalArgumentException();
 
-        Node<Item> newfirst = new Node<>();
+        Node newfirst = new Node();
 
         if (isEmpty()) {
             newfirst.next = sentinel;
@@ -67,7 +67,7 @@ public class Deque<Item> implements Iterable<Item> {
         if (item == null) throw new IllegalArgumentException();
         // mirror addFirst
 
-        Node<Item> newlast = new Node<>();
+        Node newlast = new Node();
 
         if (isEmpty()) {
             newlast.previous = sentinel;
@@ -110,16 +110,12 @@ public class Deque<Item> implements Iterable<Item> {
      */
     @Override
     public Iterator<Item> iterator() {
-        return new ListIterator<Item>(sentinel);
+        return new ListIterator();
     }
 
     private class ListIterator<Item> implements Iterator<Item> {
 
-        private Node<Item> sentinelIterator;
-
-        private ListIterator(Node<Item> sentinel) {
-            sentinelIterator = sentinel;
-        }
+        private Node current = sentinel;
 
         /**
          * Returns {@code true} if the iteration has more elements.
@@ -130,7 +126,7 @@ public class Deque<Item> implements Iterable<Item> {
          */
         @Override
         public boolean hasNext() {
-            return sentinelIterator.next.item != null;
+            return current.next.item != null;
         }
 
         /**
@@ -142,8 +138,8 @@ public class Deque<Item> implements Iterable<Item> {
         @Override
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
-            Item result = sentinelIterator.next.item;
-            sentinelIterator.next = sentinelIterator.next.next;
+            Item result = (Item) current.next.item;
+            current = current.next;
             return result;
         }
 
