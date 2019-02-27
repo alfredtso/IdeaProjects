@@ -1,18 +1,13 @@
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.util.Iterator;
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 public class Deque<Item> implements Iterable<Item> {
-    // TODO: decide on the data implementation based on memory performance
-    // TODO: find out how to check memory usage
     /*
     *support each op in constant worse-case time, use space proportional
     *to current items and max 48n + 192 bytes,
     *iterator implementation must support each ops in constant worst-case time*/
     private int size;
-    private Node sentinel;
+    private final Node sentinel;
 
     private class Node {
         Item item;
@@ -27,15 +22,14 @@ public class Deque<Item> implements Iterable<Item> {
         size = 0;
     }
 
-    public boolean isEmpty(){
-        return (sentinel.next == null && sentinel.previous == null);
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     public int size() {
         return size;
     }
 
-    // TODO: refactor this duplicate code
     public void addFirst(Item item) {
         if (item == null) throw new IllegalArgumentException();
 
@@ -62,7 +56,6 @@ public class Deque<Item> implements Iterable<Item> {
         size++;
     }
 
-    // TODO: refactor this duplicate code
     public void addLast(Item item) {
         if (item == null) throw new IllegalArgumentException();
         // mirror addFirst
@@ -110,12 +103,13 @@ public class Deque<Item> implements Iterable<Item> {
      */
     @Override
     public Iterator<Item> iterator() {
-        return new ListIterator();
+        return new ListIterator<Item>();
     }
 
     private class ListIterator<Item> implements Iterator<Item> {
 
         private Node current = sentinel;
+        private int n = size;
 
         /**
          * Returns {@code true} if the iteration has more elements.
@@ -126,7 +120,7 @@ public class Deque<Item> implements Iterable<Item> {
          */
         @Override
         public boolean hasNext() {
-            return current.next.item != null;
+            return n != 0;
         }
 
         /**
@@ -140,6 +134,7 @@ public class Deque<Item> implements Iterable<Item> {
             if (!hasNext()) throw new NoSuchElementException();
             Item result = (Item) current.next.item;
             current = current.next;
+            n--;
             return result;
         }
 

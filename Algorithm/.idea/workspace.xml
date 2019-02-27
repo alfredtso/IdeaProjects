@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a4a3bbe-b721-49a7-b0e3-34aa26d2a978" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Permutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Week2/DequeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/libraries/algs4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/algo1w2hw.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/src/Deque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/src/Permutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/src/RandomizedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo1w2hw/src/TestRandomizedDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$ListIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/Deque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/out/production/Algorithm1W1Assignment/DequeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Week2/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo1w2hw/src/DequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Permutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Week2/Permutation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/RandomizedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Week2/RandomizedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/TestRandomizedDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm1W1Assignment/src/Week2/TestRandomizedDeque.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Percolation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1405">
+            <state relative-caret-position="320">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
@@ -45,16 +68,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/out/production/Algorithm/model/Queue.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1214">
+            <state relative-caret-position="1720">
               <caret line="98" selection-start-line="98" selection-end-line="98" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Bag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="440">
               <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -93,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="1420">
               <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,7 +176,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="13" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
@@ -200,6 +222,7 @@
     <property name="SearchEverywhereHistoryKey" value="refac&#9;ACTION&#9;Refactorings.QuickListPopupAction&#10;comment&#9;ACTION&#9;CommentByBlockComment&#10;new class&#9;ACTION&#9;NewClass&#10;new cla&#9;ACTION&#9;NewClass&#10;new clas&#9;ACTION&#9;NewClass" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550029863585" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -290,7 +313,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -298,7 +320,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.5019268" side_tool="true" visible="true" weight="0.11980831" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.5019268" side_tool="true" visible="true" weight="0.12193823" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.5677083" />
@@ -444,64 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Bag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Shell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/FixedCapacityStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#443#444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Algorithm/model/Queue.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1214">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Insertion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Selection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ResizingArrayStackOfStrings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -518,8 +482,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1405">
+        <state relative-caret-position="320">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Algorithm/model/Queue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1720">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Selection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Insertion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Shell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1420">
+          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/FixedCapacityStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="e#443#444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Bag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
