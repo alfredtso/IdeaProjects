@@ -32,14 +32,14 @@ public class FastCollinearPoints {
 
             Arrays.sort(temp, pt.slopeOrder());
 
-//            System.out.println("Sorted by slopeOrder to: " + pt);
-//            for (Point res : temp) {
-//                System.out.println(res);
-//            }
-//            System.out.println();
+            System.out.println("Sorted by slopeOrder to: " + pt);
+            for (Point res : temp) {
+                System.out.println(res);
+            }
+            System.out.println();
 
             for (int i = 1; i + 2 < N; i++) {
-//                System.out.println("Loop: i = " + i);
+                System.out.println("Loop: i = " + i);
                 if ((pt.slopeTo(temp[i]) == pt.slopeTo(temp[i + 1])) &&
                         (pt.slopeTo(temp[i + 1]) == pt.slopeTo(temp[i + 2]))) {
                     int k = 2;
@@ -47,40 +47,38 @@ public class FastCollinearPoints {
                         k++;
                         if (i + k >= N) break;
                     }
-                    // Sort subarray using y breaktie with x excluding i+k th
-//                    System.out.println("Found same slope at " + i + " til " + (i + k));
-//                    Arrays.sort(temp, i, i + k, Point::compareTo);
-//                    System.out.println("Sorting subarray...");
-                    // approach 1 take all out
-//                    Point[] sortByX = new Point[i+k-1];
-                    if (pt.compareTo(temp[i]) <= -1) {
-                        lineSegments[linelength++] = new LineSegment(pt, temp[i + k - 1]);
-                        break;
+//                     Sort subarray using y breaktie with x excluding i+k th
+                    System.out.println("Found same slope at " + i + " til " + (i + k));
+                    Arrays.sort(temp, i, i + k, Point::compareTo);
+                    System.out.println("Sorting subarray...");
+                    for (Point res : temp) {
+                        System.out.println(res);
                     }
 
-//                    for (Point res : temp) {
-//                        System.out.println(res);
-//                    }
-//                    System.out.println();
+                    if (pt.compareTo(temp[i]) < 0) {
+                        lineSegments[linelength++] = new LineSegment(pt, temp[i + k - 1]);}
+//                    } else if (pt.compareTo(temp[i+k-1]) > 0) {
+//                        lineSegments[linelength++] = new LineSegment(temp[i], pt);}
                 }
-//                System.out.println("Done Loop: " + i);
+
+                System.out.println("Done Loop: " + i);
             }
 
-//            for (LineSegment line : lineSegments) {
-//                System.out.println("Line Segments: ");
-//                System.out.println(line);
-//            }
-//            System.out.println();
+            for (LineSegment line : lineSegments) {
+                System.out.println("Line Segments: ");
+                System.out.println(line);
+            }
+            System.out.println();
 
         }
         result = new LineSegment[linelength];
         System.arraycopy(lineSegments, 0, result, 0, linelength);
 
-//        for (LineSegment line : result) {
-//            System.out.println("Line Segments: ");
-//            System.out.println(line);
-//        }
-//        System.out.println();
+        for (LineSegment line : result) {
+            System.out.println("Line Segments: ");
+            System.out.println(line);
+        }
+        System.out.println();
     }
 
     public LineSegment[] segments() {
