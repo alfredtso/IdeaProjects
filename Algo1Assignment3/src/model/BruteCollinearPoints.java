@@ -12,10 +12,12 @@ public class BruteCollinearPoints {
     private Point[] points;
 
     public BruteCollinearPoints(Point[] points) {
+
         // throw exception if arg to the constructor contains a repeated pt
         if (points == null || Arrays.asList(points).contains(null)) {
             throw new IllegalArgumentException();
         }
+
         this.points = points.clone();
         this.N = points.length;
     }

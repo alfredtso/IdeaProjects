@@ -62,7 +62,7 @@ public class Point implements Comparable<Point> {
     public double slopeTo(Point that) {
         /* YOUR CODE HERE */
         if (this.x != that.x && this.y != that.y)
-            return (that.x - this.x) * 1.0 / (that.y - this.y);
+            return (that.y - this.y) * 1.0 / (that.x - this.x);
         else if (this.x != that.x) return 0.0;
         else if (this.y != that.y) return Double.POSITIVE_INFINITY;
         else return Double.NEGATIVE_INFINITY;
@@ -91,6 +91,16 @@ public class Point implements Comparable<Point> {
         }
     }
 
+    private int compareX(Point that) {
+        if (this.x < that.x) return -1;
+        else if (this.x > that.x) return 1;
+        else {
+            if (this.y < that.y) return -1;
+            else if (this.y > that.y) return 1;
+            else return 0;
+        }
+    }
+
     /**
      * Compares two points by the slope they make with this point.
      * The slope is defined as in the slopeTo() method.
@@ -107,6 +117,7 @@ public class Point implements Comparable<Point> {
        Point p = new Point(x, y);
         @Override
         public int compare(Point o1, Point o2) {
+//            System.out.println("Using " + p + " as anchor point");
             if (p.slopeTo(o1) > p.slopeTo(o2)) return 1;
             else if (p.slopeTo(o1) < p.slopeTo(o2)) return -1;
             else return 0;
