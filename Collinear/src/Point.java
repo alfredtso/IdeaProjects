@@ -1,4 +1,3 @@
-//package model;
 /******************************************************************************
  *  Compilation:  javac model.Point.java
  *  Execution:    java model.Point
@@ -9,9 +8,9 @@
  *
  ******************************************************************************/
 
-import java.util.Comparator;
-
 import edu.princeton.cs.algs4.StdDraw;
+
+import java.util.Comparator;
 
 public class Point implements Comparable<Point> {
 

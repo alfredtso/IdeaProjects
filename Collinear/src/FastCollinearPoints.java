@@ -1,5 +1,3 @@
-//package model;
-
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
@@ -8,7 +6,7 @@ import java.util.Arrays;
 
 public class FastCollinearPoints {
 
-    private Point[] points;
+    private final Point[] points;
     private int N;
     private LineSegment[] result;
 
@@ -22,7 +20,7 @@ public class FastCollinearPoints {
         this.points = points.clone();
         int N = this.points.length;
         int linelength = 0;
-        LineSegment[] lineSegments = new LineSegment[N]; // Temp space
+        LineSegment[] lineSegments = new LineSegment[2 * N]; // Temp space
         Point[] temp = new Point[N];  // Temp space
         System.arraycopy(points, 0, temp, 0, N); // no
 
