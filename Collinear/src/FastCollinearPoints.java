@@ -3,6 +3,8 @@ import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FastCollinearPoints {
 
@@ -13,7 +15,8 @@ public class FastCollinearPoints {
     public FastCollinearPoints(Point[] points) {
 
         // throw exception if arg to the constructor contains a repeated pt
-        if (points == null || Arrays.asList(points).contains(null)) {
+        if (points == null || Arrays.asList(points).contains(null) || containDuplicate(points)) {
+
             throw new IllegalArgumentException();
         }
 
@@ -92,6 +95,16 @@ public class FastCollinearPoints {
 //        }
 //        System.out.println();
 
+    }
+
+    private boolean containDuplicate(Point[] points) {
+        Set<Point> pointSet = new HashSet<>();
+        for (Point i: points)
+        {
+            if (pointSet.contains(i)) return true;
+            pointSet.add(i);
+        }
+        return false;
     }
 
     public LineSegment[] segments() {
