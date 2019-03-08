@@ -95,7 +95,7 @@ public class FastCollinearPoints {
     }
 
     public LineSegment[] segments() {
-        return result;
+        return result.clone();
     }
 
     public int numberOfSegments() {
