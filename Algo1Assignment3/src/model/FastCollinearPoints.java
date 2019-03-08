@@ -24,9 +24,9 @@ public class FastCollinearPoints {
         this.points = points.clone();
         int N = this.points.length;
         int linelength = 0;
-        LineSegment[] lineSegments = new LineSegment[N];
-        Point[] temp = new Point[N];
-        System.arraycopy(points, 0, temp, 0, N);
+        LineSegment[] lineSegments = new LineSegment[N]; // Temp space
+        Point[] temp = new Point[N];  // Temp space
+        System.arraycopy(points, 0, temp, 0, N); // no
 
         for (Point pt : points) {
 
@@ -38,7 +38,9 @@ public class FastCollinearPoints {
             }
             System.out.println();
 
-            for (int i = 1; i + 2 < N; i++) {
+            int r = 1; // Initialize step
+
+            for (int i = 1; i + 2 < N; i+=r) {
                 System.out.println("Loop: i = " + i);
                 if ((pt.slopeTo(temp[i]) == pt.slopeTo(temp[i + 1])) &&
                         (pt.slopeTo(temp[i + 1]) == pt.slopeTo(temp[i + 2]))) {
@@ -51,14 +53,24 @@ public class FastCollinearPoints {
                     System.out.println("Found same slope at " + i + " til " + (i + k));
                     Arrays.sort(temp, i, i + k, Point::compareTo);
                     System.out.println("Sorting subarray...");
-                    for (Point res : temp) {
-                        System.out.println(res);
+                    for (int s = i; s < i+k; s++){
+                        System.out.println(temp[s]);
                     }
 
+                    // If the anchor point is the smallest (end-point),
+                    // Form line segment, otherwise skip k steps
                     if (pt.compareTo(temp[i]) < 0) {
-                        lineSegments[linelength++] = new LineSegment(pt, temp[i + k - 1]);}
+                        lineSegments[linelength] = new LineSegment(pt, temp[i + k - 1]);
+                        System.out.println("Add new segment: " + lineSegments[linelength]);
+                        r = k;
+                        linelength++;
+                    } else {
+                        r = k;  // skip k steps
+                    }
 //                    } else if (pt.compareTo(temp[i+k-1]) > 0) {
 //                        lineSegments[linelength++] = new LineSegment(temp[i], pt);}
+                } else {
+                    r = 1;  // return to normal step
                 }
 
                 System.out.println("Done Loop: " + i);
