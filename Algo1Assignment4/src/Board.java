@@ -6,12 +6,13 @@ import static java.lang.Math.abs;
 
 public class Board {
 
-    private char[] myBoard;
+    private final char[] myBoard;
     private int dimension;
-    private int manhattan;
     private Stack<Board> boards;
+    private int manhattan;
 
-    public Board(int[][] blocks) {
+    public Board(int[][] blocks)
+    {
         dimension = blocks.length;
         myBoard = new char[dimension * dimension];
         for (int i = 0; i < dimension; i++)
@@ -22,12 +23,14 @@ public class Board {
                 myBoard[index] = (char) blocks[i][j];
             }
         }
+        calManhattan();
     }
 
     private Board(char[] blocksArray) {
         myBoard = new char[blocksArray.length];
         System.arraycopy(blocksArray, 0, myBoard,0, blocksArray.length);
         dimension = (int) Math.sqrt(blocksArray.length);
+        calManhattan();
     }
 
     private int getIndex(int row, int col) {
@@ -56,8 +59,11 @@ public class Board {
 
         return result;
     }
-
     public int manhattan() {
+        return manhattan;
+    }
+
+    private void calManhattan() {
         int result = 0;
 
         for (int i = 0; i < myBoard.length; i++) {
@@ -73,14 +79,12 @@ public class Board {
                         abs(currentPosRow-supposedPosRow);
             }
         }
-        return result;
+        this.manhattan = result;
     }
 
+
     public boolean isGoal() {
-        for (int i = 0; i < myBoard.length; i++) {
-            if ( myBoard[i] != i+1 && myBoard[i] !=0 ) return false;
-        }
-        return true;
+        return manhattan == 0;
     }
 
     public Board twin() {
@@ -100,7 +104,6 @@ public class Board {
         return twin;
     }
 
-    // TODO: failed test
     public boolean equals(Object other) {
         if (other == this) return true;
         if (other == null) return false;
@@ -209,18 +212,19 @@ public class Board {
     }
 
     public String toString() {
-        System.out.println(dimension);
+        StringBuilder s = new StringBuilder();
+        s.append(dimension).append("\n");
         // TODO: amend later
         int maxlength = (int)(Math.log10(myBoard.length)) + 2;
         for (int i = 0; i < this.myBoard.length; i++) {
             String number = Integer.toString(myBoard[i]);
             String padded = padding(number, maxlength);
-            System.out.print(padded);
+            s.append(padded);
             if ( i%dimension == dimension-1) {
-                System.out.println();
-            }
+                s.append("\n");
+           }
         }
-        return "";
+        return s.toString();
     }
 
     // TODO: Basic error checking for input
