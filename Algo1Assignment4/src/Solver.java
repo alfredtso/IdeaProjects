@@ -4,11 +4,13 @@ import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
+import java.util.Stack;
 
 public class Solver {
 
     MinPQ<Manhattan> pq;
     Queue<Board> sol;
+    Queue<Board> twinsSol;
 
     private class Manhattan implements Comparable<Manhattan> {
         // TODO: not sure if all 3 is needed
@@ -16,6 +18,9 @@ public class Solver {
         private int manhattan;
         private final Board board;
         private final boolean valid;
+        private boolean twins = false;
+
+        // TODO: need to include a twin and solve
 
         Manhattan(Board board, Board previousBoard, int moves) {
             this.board = board;
@@ -25,7 +30,7 @@ public class Solver {
         }
 
         public int compareTo(Manhattan that) {
-            // breaking ties case
+            // breaking ties case using hamming distance
             if (this.priority == that.priority) {
                 return this.board.hamming() - that.board.hamming();
             }
@@ -33,11 +38,12 @@ public class Solver {
             return this.priority - that.priority;
         }
 
-        // TODO: critical optimization?
         public boolean isValid() {
             return valid;
         }
 
+        // todo: not sure if this is needed
+        public void setTwins() { this.twins = true;}
     }
 
     // find a solution to the initial board (using the A* algorithm)
@@ -47,33 +53,63 @@ public class Solver {
         // initialize
         pq = new MinPQ<>();
         sol = new Queue<>();
+        twinsSol = new Queue<>();
 
         // insert initial search node
         Board currentBoard = initial;
+        Board currentTwins = initial.twin();
+
+    // if twin is solvable ( have a goal board) then the initial one is not solvable
         sol.enqueue(initial);
+        twinsSol.enqueue(currentTwins);
         int moves = 0;
+        // use boolean instead ?
+        int twinTurn = 0;
 
         while (!currentBoard.isGoal()) {
 
             //update moves
-            moves++;
+            if (twinTurn%2 == 0) { moves++; }
 
             // add first loop of search nodes
+            // todo; this is initial queue
             Manhattan localval;
-            Iterable<Board> debugWatch = currentBoard.neighbors();
-            for (Board b : debugWatch) {
-                localval = new Manhattan(b, currentBoard, moves);
-                if (localval.isValid()) {
-                    pq.insert(localval);
+            Iterable<Board> debugWatch;
+            if (twinTurn%2 == 0) {
+                debugWatch = currentBoard.neighbors();
+                for (Board b : debugWatch) {
+                    localval = new Manhattan(b, currentBoard, moves);
+                    if (localval.isValid()) {
+                        pq.insert(localval);
+                    }
                 }
+                Manhattan currentNode = pq.delMin();
+            }
+            else {
+                // todo refractor
+                debugWatch = currentTwins.neighbors();
+                for (Board b : debugWatch) {
+                    localval = new Manhattan(b, currentTwins, moves);
+                    localval.setTwins();
+                    if (localval.isValid()) {
+                        pq.insert(localval);
+                    }
+                }
+
+                Stack<Manhattan> temp = new Stack<>();
+                temp.contains()
+                Manhattan currentNode = pq.delMin();
+                if
             }
 
             //TODO: change to localval
-            Manhattan currentNode = pq.delMin();
             currentBoard = currentNode.board;
             sol.enqueue(currentBoard);
-        }
 
+            // update twinTurn
+            //todo: increment might overflow the int?
+            twinTurn++;
+        }
     }
 
     // is the initial board solvable?
