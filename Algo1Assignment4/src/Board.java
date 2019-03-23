@@ -90,18 +90,16 @@ public class Board {
     public Board twin() {
         char[] copy = new char[dimension * dimension];
         System.arraycopy(myBoard, 0, copy, 0, myBoard.length);
-        int randomIndex1 = StdRandom.uniform(myBoard.length);
+
+        int randomIndex1 = StdRandom.uniform(myBoard.length-1);
         int randomIndex2 = randomIndex1 + 1;
-        while (copy[randomIndex1] == 0 || copy[randomIndex2] == 0)
-        {
-            randomIndex1++;
-            randomIndex2++;
+
+        while(myBoard[randomIndex1] == 0 || myBoard[randomIndex2] ==0) {
+            randomIndex1 = StdRandom.uniform(myBoard.length-1);
+            randomIndex2 = randomIndex1 + 1;
         }
-        char temp = copy[randomIndex1];
-        copy[randomIndex1] = copy[randomIndex2];
-        copy[randomIndex2] = temp;
-        Board twin = new Board(copy);
-        return twin;
+        exch(copy, randomIndex1, randomIndex1);
+        return new Board(copy);
     }
 
     public boolean equals(Object other) {

@@ -8,9 +8,11 @@ import java.util.Stack;
 
 public class Solver {
 
-    MinPQ<Manhattan> pq;
-    Queue<Board> sol;
-    Queue<Board> twinsSol;
+    private MinPQ<Manhattan> pq;
+    private Queue<Board> sol;
+    private Queue<Board> twinsSol;
+    private boolean solvable;
+    private int moves;
 
     private class Manhattan implements Comparable<Manhattan> {
         // TODO: not sure if all 3 is needed
@@ -18,15 +20,16 @@ public class Solver {
         private int manhattan;
         private final Board board;
         private final boolean valid;
-        private boolean twins = false;
+        private boolean twins;
 
         // TODO: need to include a twin and solve
 
-        Manhattan(Board board, Board previousBoard, int moves) {
+        Manhattan(Board board, Board previousBoard, int moves, boolean twins) {
             this.board = board;
             this.valid = !board.equals(previousBoard);
             this.manhattan = board.manhattan();
             this.priority = manhattan + moves;
+            this.twins = twins;
         }
 
         public int compareTo(Manhattan that) {
@@ -38,12 +41,9 @@ public class Solver {
             return this.priority - that.priority;
         }
 
-        public boolean isValid() {
+        private boolean isValid() {
             return valid;
         }
-
-        // todo: not sure if this is needed
-        public void setTwins() { this.twins = true;}
     }
 
     // find a solution to the initial board (using the A* algorithm)
@@ -61,15 +61,20 @@ public class Solver {
 
     // if twin is solvable ( have a goal board) then the initial one is not solvable
         sol.enqueue(initial);
-        twinsSol.enqueue(currentTwins);
-        int moves = 0;
+        twinsSol.enqueue(currentTwins); // initial.twins?
+        this.moves = 0;
         // use boolean instead ?
         int twinTurn = 0;
+
+        // for temp storage
+        Stack<Manhattan> temp = new Stack<>();
+        Manhattan currentNode;
+        Manhattan currentNodeTwins;
 
         while (!currentBoard.isGoal()) {
 
             //update moves
-            if (twinTurn%2 == 0) { moves++; }
+            if (twinTurn%2 == 0) { this.moves++; }
 
             // add first loop of search nodes
             // todo; this is initial queue
@@ -78,54 +83,91 @@ public class Solver {
             if (twinTurn%2 == 0) {
                 debugWatch = currentBoard.neighbors();
                 for (Board b : debugWatch) {
-                    localval = new Manhattan(b, currentBoard, moves);
+                    localval = new Manhattan(b, currentBoard, moves, false);
                     if (localval.isValid()) {
                         pq.insert(localval);
                     }
                 }
-                Manhattan currentNode = pq.delMin();
+
+                // temp stack to store non twins node
+                currentNode = pq.delMin();
+                // while currentNode is twins
+                while (currentNode.twins) {
+                    temp.push(currentNode);
+                    currentNode = pq.delMin();
+                }
+
+                // put it back, empty it
+                while (!temp.empty()) {
+                    pq.insert(temp.pop());
+                }
+
+                // update currentTwin
+                currentBoard = currentNode.board;
+                sol.enqueue(currentBoard);
+
+                // todo: assertion should be turn off later
+                assert temp.isEmpty();
             }
+            // Twins case
             else {
-                // todo refractor
                 debugWatch = currentTwins.neighbors();
                 for (Board b : debugWatch) {
-                    localval = new Manhattan(b, currentTwins, moves);
-                    localval.setTwins();
+                    localval = new Manhattan(b, currentTwins, moves, true);
                     if (localval.isValid()) {
                         pq.insert(localval);
                     }
                 }
 
-                Stack<Manhattan> temp = new Stack<>();
-                temp.contains()
-                Manhattan currentNode = pq.delMin();
-                if
+                // temp stack to store non twins node
+                currentNodeTwins = pq.delMin();
+                while (!currentNodeTwins.twins) {
+                    temp.push(currentNodeTwins);
+                    currentNodeTwins = pq.delMin();
+                }
+
+                // put it back
+                while (!temp.empty()) {
+                    pq.insert(temp.pop());
+                }
+
+                // update currentTwin
+                currentTwins = currentNodeTwins.board;
+                twinsSol.enqueue(currentTwins);
+
+                //todo: assertion
+                assert temp.isEmpty();
             }
 
-            //TODO: change to localval
-            currentBoard = currentNode.board;
-            sol.enqueue(currentBoard);
-
-            // update twinTurn
+            // update twinTurn, meaning if twinTurn odd num is initial even is twins
             //todo: increment might overflow the int?
             twinTurn++;
         }
+        solvable = (twinTurn%2 == 1);
+        System.out.println(isSolvable());
+
     }
 
     // is the initial board solvable?
     // TODO: implement
     public boolean isSolvable() {
-        return false;
+        return solvable;
     }
 
     // min number of moves to solve initial board; -1 if unsolvable
     public int moves() {
-        return 0;
+        if (isSolvable()) {
+            return moves;
+        }
+        else { return -1;}
     }
 
     // sequence of boards in a shortest solution; null if unsolvable
     public Iterable<Board> solution() {
-        return sol;
+        if (isSolvable()) {
+            return sol;
+        }
+        else { return null; }
     }
 
     public static void main(String[] args) {
@@ -145,14 +187,14 @@ public class Solver {
         for (Board board : solver.solution())
             StdOut.println(board);
 
-        // print solution to standard output
-//        if (!solver.isSolvable())
-//            StdOut.println("No solution possible");
-//        else {
-//            StdOut.println("Minimum number of moves = " + solver.moves());
-//            for (Board board : solver.solution())
-//                StdOut.println(board);
-//        }
+//         print solution to standard output
+        if (!solver.isSolvable())
+            StdOut.println("No solution possible");
+        else {
+            StdOut.println("Minimum number of moves = " + solver.moves());
+            for (Board board : solver.solution())
+                StdOut.println(board);
+        }
     }
 
 }
