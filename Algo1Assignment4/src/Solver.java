@@ -42,11 +42,7 @@ public class Solver {
         public int compareTo(Manhattan that) {
             // breaking ties case using hamming distance
             if (this.priority == that.priority) {
-                if (this.manhattan == that.manhattan) {
-                    return this.board.hamming() - that.board.hamming();
-                } else {
-                    return this.manhattan - that.manhattan;
-                }
+                return this.manhattan - that.manhattan;
             }
             // < 0 meaning lower priority, therefore got removed earlier
             return this.priority - that.priority;
@@ -87,14 +83,15 @@ public class Solver {
             // todo; this is initial queue
             Manhattan localval;
             Iterable<Board> debugWatch;
-            if (twinTurn == false) {
+            if (!twinTurn) {
                 debugWatch = currentBoard.neighbors();
                 for (Board b : debugWatch) {
-                    localval = new Manhattan(b, minNode, minNode.moves+1, false);
+                    localval = new Manhattan(b, minNode, minNode.moves + 1, false);
                     if (localval.isValid()) {
                         pq.insert(localval);
                     }
                 }
+
 
                 // temp stack to store non twins node
                 minNode = pq.delMin();
@@ -122,7 +119,7 @@ public class Solver {
             else {
                 debugWatch = currentTwins.neighbors();
                 for (Board b : debugWatch) {
-                    localval = new Manhattan(b, minNodeTwin, minNodeTwin.moves+1, true);
+                    localval = new Manhattan(b, minNodeTwin, minNodeTwin.moves + 1, true);
                     if (localval.isValid()) {
                         pq.insert(localval);
                     }
@@ -176,9 +173,10 @@ public class Solver {
     // min number of moves to solve initial board; -1 if unsolvable
     public int moves() {
         if (isSolvable()) {
-            return moves-1;
+            return moves - 1;
+        } else {
+            return -1;
         }
-        else { return -1;}
     }
 
     // sequence of boards in a shortest solution; null if unsolvable
@@ -189,8 +187,9 @@ public class Solver {
                 result.enqueue(sol.pop());
             }
             return result;
+        } else {
+            return null;
         }
-        else { return null; }
     }
 
     public static void main(String[] args) {

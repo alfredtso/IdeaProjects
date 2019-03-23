@@ -91,14 +91,19 @@ public class Board {
         char[] copy = new char[dimension * dimension];
         System.arraycopy(myBoard, 0, copy, 0, myBoard.length);
 
-        int randomIndex1 = StdRandom.uniform(myBoard.length-1);
-        int randomIndex2 = randomIndex1 + 1;
-
-        while(myBoard[randomIndex1] == 0 || myBoard[randomIndex2] ==0) {
-            randomIndex1 = StdRandom.uniform(myBoard.length-1);
-            randomIndex2 = randomIndex1 + 1;
+        for (int i = 0; i < myBoard.length; i++) {
+            if (copy[i] != 0) {
+                if (i%dimension == 0) {
+                    if ( copy[i+1] != 0) exch(copy, i, i+1);
+                }
+                else if (i%dimension == 1) {
+                    if (copy[i+1] !=0) exch(copy, i, i+1);
+                }
+                else if (i%dimension == dimension-1) {
+                    if (copy[i-1] !=0) exch(copy, i, i-1);
+                }
+            }
         }
-        exch(copy, randomIndex1, randomIndex1);
         return new Board(copy);
     }
 
